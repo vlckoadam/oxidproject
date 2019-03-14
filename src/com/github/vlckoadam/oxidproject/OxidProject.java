@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class OxidProject {
 
-	static String elementX = "C", elementY = "O";
+	static String elementX = "%", elementY = "§";
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Zadajte 1. prvok zluceniny");
@@ -14,7 +14,7 @@ public class OxidProject {
 		System.out.println("Ma prvok " + elementY + " oxidacne cislo -2? [ano=a;nie=n]");
 		String s0 = sc.nextLine();
 		sc.close();
-		int on = 0;
+		int on;
 		if (s0.equalsIgnoreCase("a") || s0.equalsIgnoreCase("ano"))
 			on = -2;
 		else on = -1;
@@ -28,9 +28,8 @@ public class OxidProject {
 	}
 	private static void b(int i) {
 		final int OON = -2;
-		int oxidnum = i;
-		if (oxidnum >= 1 && oxidnum <= 8) {
-			int i1 = Math.abs(OON), i2 = oxidnum;
+		if (i >= 1 && i <= 8) {
+			int i1 = Math.abs(OON), i2 = i;
 			int max = 0;
 			int toI1 = i1, toI2 = i2;
 			if (i1 > i2) max = i1; else max = i2;
@@ -43,14 +42,13 @@ public class OxidProject {
 			i1 = toI1;
 			i2 = toI2;
 			
-			System.out.println(oxidnum + " : " + elementX + (i1 != 1? i1 : "")+ elementY + (i2 != 1? i2 : ""));
+			System.out.println(i + " : " + elementX + (i1 != 1? i1 : "")+ elementY + (i2 != 1? i2 : ""));
 		}
 	}
 	
 	private static void a(int i) {
-		int oxidnum = i;
-		if (oxidnum >= 1 && oxidnum <= 8) {
-			System.out.println(oxidnum + " : " + elementX + elementY + (oxidnum != 1? oxidnum : ""));
+		if (i >= 1 && i <= 8) {
+			System.out.println(i + " : " + elementX + elementY + (i != 1? i : ""));
 		}
 	}
 }
